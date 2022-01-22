@@ -1,0 +1,28 @@
+
+<center><h1>Login</h1></center>
+<center><% if flash.any? %>
+<% flash.each do |type, msg| %>
+<div id="error">
+<%= msg %>
+</div>
+<% end %>
+<% end %></center>
+
+<center><%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username%>
+
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %><br>
+ 
+  </div>
+
+  <div>
+    <%= form.submit "Login",class: "btn btn-outline-primary" %>
+  </div>
+<% end %></center>
+

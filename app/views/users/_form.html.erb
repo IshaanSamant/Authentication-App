@@ -1,0 +1,24 @@
+<center>
+<%= form_with model: user do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+    <% user.errors.full_messages_for(:username).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %><br>
+    <% user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+  <div>
+    <%= form.submit "Change Credentials",class: "btn btn-outline-secondary"%>
+  </div>
+<% end %>
+</center>
